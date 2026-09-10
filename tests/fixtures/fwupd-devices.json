@@ -1,0 +1,552 @@
+{
+  "Devices" : [
+    {
+      "Name" : "Bios DB Key",
+      "DeviceId" : "a53a18052aff3c84efd6171595203a5faea35361",
+      "ParentDeviceId" : "0352a8acc949c7df21fec16e566ba9a74e797a97",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\VENDOR_Dell&NAME_Dell-Bios-DB-Key",
+        "UEFI\\CRT_337348B3489145B7BB40A80985BD6A66BE9C1525"
+      ],
+      "Guid" : [
+        "2c84dbc5-7d24-51a7-8226-7c38a62cd402",
+        "526d806a-4bfd-53a5-91c9-c834d81e04aa"
+      ],
+      "Plugin" : "uefi_db",
+      "Protocols" : [
+        "org.uefi.dbx2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "needs-reboot",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Dell",
+      "VendorIds" : [
+        "UEFI:Dell"
+      ],
+      "Version" : "2018",
+      "VersionFormat" : "number",
+      "VersionRaw" : 2018,
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "Bios FW Aux Authority",
+      "DeviceId" : "315b07b8aed5482449e4936cb51c7e96e5137002",
+      "ParentDeviceId" : "0352a8acc949c7df21fec16e566ba9a74e797a97",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\VENDOR_Dell&NAME_Dell-Bios-FW-Aux-Authority",
+        "UEFI\\CRT_2CF60596F8E80ACD2C245C205539EDC6D847DDC0"
+      ],
+      "Guid" : [
+        "098b2152-a53a-517e-b994-52801de29893",
+        "78a7c8d1-b2c0-5621-b1f1-98bb145573ea"
+      ],
+      "Plugin" : "uefi_db",
+      "Protocols" : [
+        "org.uefi.dbx2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "needs-reboot",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Dell",
+      "VendorIds" : [
+        "UEFI:Dell"
+      ],
+      "Version" : "2018",
+      "VersionFormat" : "number",
+      "VersionRaw" : 2018,
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "BootGuard Configuration",
+      "DeviceId" : "00cbe07e8537eec788c9f80b2d9f40e4bf5e16d2",
+      "ParentDeviceId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "Plugin" : "intel_mchi",
+      "Flags" : [
+        "internal",
+        "can-emulation-tag"
+      ],
+      "Checksums" : [
+        "cec5bba33899d87b16d38581f3db0dbf5920f6094074437a94dd6756cec56923d3747ee0ace7f56e0577b97592c84096"
+      ],
+      "Vendor" : "Intel",
+      "VendorIds" : [
+        "PCI:0x8086"
+      ],
+      "Icons" : [
+        "computer"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "Core? i7-10700 CPU @ 2.90GHz",
+      "DeviceId" : "4bde70ba4e39b28f9eab1628f9dd6e6244c03027",
+      "InstanceIds" : [
+        "CPUID\\PRO_0&FAM_06&MOD_A5",
+        "CPUID\\PRO_0&FAM_06&MOD_A5&STP_5"
+      ],
+      "Guid" : [
+        "a45b0522-5722-54bd-b802-86cd044262df",
+        "538440cb-7cac-5185-bc01-d93a1e474058"
+      ],
+      "Plugin" : "cpu",
+      "Flags" : [
+        "internal"
+      ],
+      "Vendor" : "Intel",
+      "VersionFormat" : "hex",
+      "Icons" : [
+        "computer"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "KEK CA",
+      "DeviceId" : "b7a1d3d90faa1f6275d9a98da4fb3be7118e61c7",
+      "ParentDeviceId" : "2a4c23bfb79b5dabe474cb7b1b3e604645d6f9c6",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\VENDOR_Microsoft&NAME_Microsoft-KEK-CA",
+        "UEFI\\CRT_9F402B1CC0243CBEDC58A525789816CCCA7687A9"
+      ],
+      "Guid" : [
+        "814e950f-1449-566a-a190-42c9d3a3a2df",
+        "dfa66406-6568-5bdf-bb8e-b53ddb4be4cf"
+      ],
+      "Plugin" : "uefi_kek",
+      "Protocols" : [
+        "org.uefi.dbx2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "needs-reboot",
+        "usable-during-update",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Microsoft",
+      "VendorIds" : [
+        "UEFI:Microsoft"
+      ],
+      "Version" : "2011",
+      "VersionFormat" : "number",
+      "VersionRaw" : 2011,
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "Key Exchange Key",
+      "DeviceId" : "7397c9a72524cfd3666ebab2cf1d5c7dc1e32b18",
+      "ParentDeviceId" : "2a4c23bfb79b5dabe474cb7b1b3e604645d6f9c6",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\VENDOR_Dell&NAME_Dell-Key-Exchange-Key",
+        "UEFI\\CRT_82791E7C91412B53780841C49A61B17706D00402"
+      ],
+      "Guid" : [
+        "a1f2c958-8a42-57ad-905e-0e7a56d210a6",
+        "5cc336a8-3b72-5d7e-8d62-3e88d9b3b39f"
+      ],
+      "Plugin" : "uefi_kek",
+      "Protocols" : [
+        "org.uefi.dbx2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "needs-reboot",
+        "usable-during-update",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Dell",
+      "VendorIds" : [
+        "UEFI:Dell"
+      ],
+      "Version" : "2016",
+      "VersionFormat" : "number",
+      "VersionRaw" : 2016,
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "PM991a NVMe Samsung 512GB",
+      "DeviceId" : "71b677ca0f1bc2c5b804fa1d59e52064ce589293",
+      "InstanceIds" : [
+        "NVME\\VEN_144D&DEV_A809",
+        "NVME\\VEN_144D&DEV_A809&SUBSYS_144DA801",
+        "STORAGE-DELL-109819",
+        "PM991a NVMe Samsung 512GB"
+      ],
+      "Guid" : [
+        "8b86707a-1412-5389-8f66-725224d28879",
+        "71c19ff0-0bc0-5c85-aa6f-ba47fcc33eee",
+        "bc797f84-209a-5fb5-b271-e96046c2e58a",
+        "f49677c5-4921-4733-81fa-69a09abbcc4d",
+        "5986f2b7-e209-5538-a0f9-7a44c8da8142"
+      ],
+      "Serial" : "S65ZNE0R967681",
+      "Summary" : "NVM Express solid state drive",
+      "Plugin" : "nvme",
+      "Protocols" : [
+        "org.nvmexpress"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "require-ac",
+        "needs-reboot",
+        "usable-during-update",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Samsung",
+      "VendorIds" : [
+        "PCI:0x144D"
+      ],
+      "Version" : "26302039",
+      "VersionFormat" : "plain",
+      "Icons" : [
+        "drive-harddisk"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "Platform Key",
+      "DeviceId" : "6924110cde4fa051bfdc600a60620dc7aa9d3c6a",
+      "ParentDeviceId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\VENDOR_Dell&NAME_Dell-Platform-Key",
+        "UEFI\\CRT_DB84CBBE71B3B1F045F98D4E3DA19F18F834A43A"
+      ],
+      "Guid" : [
+        "8affd5b3-c498-5a17-84b5-29d2c5728e6f",
+        "ca4b602c-3c2f-5ccf-9757-ad471c465b41"
+      ],
+      "Summary" : "UEFI Platform Key",
+      "Plugin" : "uefi_pk",
+      "Flags" : [
+        "internal"
+      ],
+      "Vendor" : "Dell",
+      "Version" : "2016",
+      "VersionFormat" : "number",
+      "VersionRaw" : 2016,
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "System Firmware",
+      "DeviceId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "Guid" : [
+        "397a840c-6321-49b9-a4f4-f48bcf973686"
+      ],
+      "Summary" : "UEFI System Resource Table device (updated via NVRAM)",
+      "Plugin" : "uefi_capsule",
+      "Protocols" : [
+        "org.uefi.capsule"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "require-ac",
+        "needs-reboot",
+        "can-verify",
+        "usable-during-update"
+      ],
+      "RequestFlags" : [
+        "allow-generic-message"
+      ],
+      "Checksums" : [
+        "0a1568b30ad1f5ffd69723f07a82f36e2d8ace427a577a0ff1b119c965326e0c"
+      ],
+      "Vendor" : "Dell Inc.",
+      "VendorIds" : [
+        "DMI:Dell Inc."
+      ],
+      "Version" : "65843",
+      "VersionLowest" : "65843",
+      "VersionFormat" : "number",
+      "VersionRaw" : 65843,
+      "VersionLowestRaw" : 65843,
+      "Icons" : [
+        "computer"
+      ],
+      "Created" : 1788915767,
+      "UpdateState" : 2
+    },
+    {
+      "Name" : "TPM",
+      "DeviceId" : "1d8d50a4dbc65618f5c399c2ae827b632b3ccc11",
+      "InstanceIds" : [
+        "TPM\\VEN_NTC&DEV_0000",
+        "TPM\\VEN_NTC&MOD_NPCT75x\"!!4rls",
+        "TPM\\VEN_NTC&DEV_0000&VER_2.0",
+        "TPM\\VEN_NTC&MOD_NPCT75x\"!!4rls&VER_2.0",
+        "0a52-2.0"
+      ],
+      "Guid" : [
+        "fac1c8f3-73c8-5cd6-8330-07a3690b5140",
+        "e4a6bfd6-81ba-5d6a-bb28-84be07ee7a29",
+        "e9ccc1dc-960a-5e09-afe9-e59a904b776d",
+        "5a6b5ab6-c483-5eec-8a34-23a6d6d120bd",
+        "e6db5039-18be-5752-9923-89edad294a73"
+      ],
+      "Plugin" : "tpm",
+      "Protocols" : [
+        "org.trustedcomputinggroup.tpm2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "require-ac",
+        "needs-reboot",
+        "self-recovery",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Nuvoton",
+      "VendorIds" : [
+        "TPM:NTC"
+      ],
+      "Version" : "7.2.2.0",
+      "VersionFormat" : "quad",
+      "VersionRaw" : 1970333427040256,
+      "Icons" : [
+        "computer"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "UEFI CA",
+      "DeviceId" : "5bc922b7bd1adb5b6f99592611404036bd9f42d0",
+      "ParentDeviceId" : "0352a8acc949c7df21fec16e566ba9a74e797a97",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\VENDOR_Microsoft&NAME_Microsoft-UEFI-CA",
+        "UEFI\\CRT_E30CF09DABEAB32A6E3B07A7135245DE05FFB658"
+      ],
+      "Guid" : [
+        "26f42cba-9bf6-5365-802b-e250eb757e96",
+        "c34a7e6a-bd86-5244-8bd0-7db66fd3c073"
+      ],
+      "Plugin" : "uefi_db",
+      "Protocols" : [
+        "org.uefi.dbx2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "needs-reboot",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Microsoft",
+      "VendorIds" : [
+        "UEFI:Microsoft"
+      ],
+      "Version" : "2011",
+      "VersionFormat" : "number",
+      "VersionRaw" : 2011,
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "UEFI Device Firmware",
+      "DeviceId" : "f0991a729ba34557786ee0f9116d7450a2216423",
+      "Guid" : [
+        "5d701a3a-3a61-11eb-adc1-0242ac120002"
+      ],
+      "Summary" : "UEFI System Resource Table device (updated via NVRAM)",
+      "Plugin" : "uefi_capsule",
+      "Protocols" : [
+        "org.uefi.capsule"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "require-ac",
+        "needs-reboot",
+        "usable-during-update"
+      ],
+      "RequestFlags" : [
+        "allow-generic-message"
+      ],
+      "VendorIds" : [
+        "DMI:Dell Inc."
+      ],
+      "Version" : "236",
+      "VersionLowest" : "236",
+      "VersionFormat" : "number",
+      "VersionRaw" : 236,
+      "VersionLowestRaw" : 236,
+      "Created" : 1788915767,
+      "UpdateState" : 2
+    },
+    {
+      "Name" : "UEFI Device Firmware",
+      "DeviceId" : "5a93823e04e9266e542df782bfad9fdcc8260530",
+      "Guid" : [
+        "f49677c5-4921-4733-81fa-69a09abbcc4d"
+      ],
+      "Summary" : "UEFI System Resource Table device (updated via NVRAM)",
+      "Plugin" : "uefi_capsule",
+      "Protocols" : [
+        "org.uefi.capsule"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "require-ac",
+        "needs-reboot",
+        "usable-during-update"
+      ],
+      "RequestFlags" : [
+        "allow-generic-message"
+      ],
+      "VendorIds" : [
+        "DMI:Dell Inc."
+      ],
+      "Version" : "640688185",
+      "VersionLowest" : "640688185",
+      "VersionFormat" : "number",
+      "VersionRaw" : 640688185,
+      "VersionLowestRaw" : 640688185,
+      "Created" : 1788915767,
+      "UpdateState" : 2
+    },
+    {
+      "Name" : "UEFI Key Exchange Key",
+      "DeviceId" : "2a4c23bfb79b5dabe474cb7b1b3e604645d6f9c6",
+      "ParentDeviceId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "Plugin" : "uefi_kek",
+      "Flags" : [
+        "internal"
+      ],
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "UEFI Signature Database",
+      "DeviceId" : "0352a8acc949c7df21fec16e566ba9a74e797a97",
+      "ParentDeviceId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "Plugin" : "uefi_db",
+      "Flags" : [
+        "internal"
+      ],
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "UEFI dbx",
+      "DeviceId" : "362301da643102b9f38477387e2193e57abaa590",
+      "ParentDeviceId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\CRT_E28D59CA489BD2AD580F2EA5D62D6A29BB9C02AE5A818434A37DA7FC11DFF9E9&ARCH_X64",
+        "UEFI\\CRT_A1117F516A32CEFCBA3F2D1ACE10A87972FD6BBE8FE0D0B996E09E65D802A503&ARCH_X64"
+      ],
+      "Guid" : [
+        "4a6cd2cb-8741-5257-9d1f-89a275dacca7",
+        "f8ba2887-9411-5c36-9cee-88995bb39731"
+      ],
+      "Summary" : "UEFI revocation database",
+      "Plugin" : "uefi_dbx",
+      "Protocols" : [
+        "org.uefi.dbx2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "needs-reboot",
+        "usable-during-update",
+        "only-version-upgrade",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Checksums" : [
+        "45c7c8ae750acfbb48fc37527d6412dd644daed8913ccd8a24c94d856967df8e"
+      ],
+      "Vendor" : "Microsoft",
+      "VendorIds" : [
+        "UEFI:Microsoft"
+      ],
+      "Version" : "20160809",
+      "VersionLowest" : "20160809",
+      "VersionFormat" : "number",
+      "Icons" : [
+        "application-certificate"
+      ],
+      "InstallDuration" : 1,
+      "Created" : 1788915767
+    },
+    {
+      "Name" : "Windows Production PCA",
+      "DeviceId" : "ad7e00ec37f005ae10492bdb7f73aef0d2e20488",
+      "ParentDeviceId" : "0352a8acc949c7df21fec16e566ba9a74e797a97",
+      "CompositeId" : "e0180370cf350e32081ca49701e1eecdae21a7cb",
+      "InstanceIds" : [
+        "UEFI\\VENDOR_Microsoft&NAME_Microsoft-Windows-Production-PCA",
+        "UEFI\\CRT_1A8B6903D64CC9AD09D12FCB355663A458A09EF0"
+      ],
+      "Guid" : [
+        "675d2184-6c9a-59f1-a6f1-3c229b5dbb79",
+        "0611d85d-99a4-5c50-8c17-fc5196226f85"
+      ],
+      "Plugin" : "uefi_db",
+      "Protocols" : [
+        "org.uefi.dbx2"
+      ],
+      "Flags" : [
+        "internal",
+        "updatable",
+        "needs-reboot",
+        "signed-payload",
+        "can-emulation-tag"
+      ],
+      "Vendor" : "Microsoft",
+      "VendorIds" : [
+        "UEFI:Microsoft"
+      ],
+      "Version" : "2011",
+      "VersionFormat" : "number",
+      "VersionRaw" : 2011,
+      "Icons" : [
+        "application-certificate"
+      ],
+      "Created" : 1788915767
+    }
+  ]
+}

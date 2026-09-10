@@ -1,0 +1,61 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: firmware-check-NODE_NAME
+  namespace: firmware-maintenance
+  labels:
+    app.kubernetes.io/name: fwupd
+    app.kubernetes.io/part-of: firmware-maintenance
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 3600
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: fwupd
+        app.kubernetes.io/part-of: firmware-maintenance
+    spec:
+      nodeName: NODE_NAME
+      restartPolicy: Never
+      hostPID: true
+      containers:
+        - name: fwupd
+          image: ghcr.io/jlaska/fwupd:v1.0.0
+          args: ["get-updates"]
+          env:
+            - name: FWUPD_UEFI_ESP_PATH
+              value: /boot/efi
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - name: sys-firmware
+              mountPath: /sys/firmware
+            - name: sys-bus
+              mountPath: /sys/bus
+            - name: sys-class
+              mountPath: /sys/class
+            - name: sys-devices
+              mountPath: /sys/devices
+            - name: dev
+              mountPath: /dev
+            - name: run-udev
+              mountPath: /run/udev
+      volumes:
+        - name: sys-firmware
+          hostPath:
+            path: /sys/firmware
+        - name: sys-bus
+          hostPath:
+            path: /sys/bus
+        - name: sys-class
+          hostPath:
+            path: /sys/class
+        - name: sys-devices
+          hostPath:
+            path: /sys/devices
+        - name: dev
+          hostPath:
+            path: /dev
+        - name: run-udev
+          hostPath:
+            path: /run/udev
