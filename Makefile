@@ -4,15 +4,21 @@ IMAGE_NAME  ?= ghcr.io/jlaska/fwupd
 IMAGE_TAG   ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
 PLATFORM    ?= linux/amd64
 
-.PHONY: help setup lint test build docker push run clean distclean
+.PHONY: help lint test build docker push run clean distclean
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*##' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
-setup: ## Install pre-commit hooks and dev dependencies
+setup: .venv/.installed .git/hooks/pre-commit ## Install pre-commit hooks and dev dependencies
+
+.git/hooks/pre-commit: .pre-commit-config.yaml
 	pre-commit install
+	@touch $@
+
+.venv/.installed: pyproject.toml uv.lock
 	uv sync
+	@touch $@
 
 lint: ## Run all linters (pre-commit hooks)
 	pre-commit run --all-files
@@ -20,8 +26,7 @@ lint: ## Run all linters (pre-commit hooks)
 test: ## Run Python tests
 	uv run pytest tests/ -v
 
-build: lint test ## Lint, test, then build Docker image
-	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
+build: lint test docker ## Lint, test, then build Docker image
 
 docker: ## Build Docker image (skip lint/test)
 	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
