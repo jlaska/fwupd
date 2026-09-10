@@ -31,22 +31,31 @@ patcher = _load_module("patch_efi_vars", _SCRIPT)
 
 class TestPartuuidToEfiGuid:
     def test_known_conversion(self):
-        result = patcher.partuuid_to_efi_guid(
-            "30ea38f7-bd27-4c0f-bfe1-249fea3904e0"
+        result = patcher.partuuid_to_efi_guid("30ea38f7-bd27-4c0f-bfe1-249fea3904e0")
+        expected = bytes(
+            [
+                0xF7,
+                0x38,
+                0xEA,
+                0x30,
+                0x27,
+                0xBD,
+                0x0F,
+                0x4C,
+                0xBF,
+                0xE1,
+                0x24,
+                0x9F,
+                0xEA,
+                0x39,
+                0x04,
+                0xE0,
+            ]
         )
-        expected = bytes([
-            0xf7, 0x38, 0xea, 0x30,
-            0x27, 0xbd,
-            0x0f, 0x4c,
-            0xbf, 0xe1,
-            0x24, 0x9f, 0xea, 0x39, 0x04, 0xe0,
-        ])
         assert result == expected
 
     def test_all_zeros(self):
-        result = patcher.partuuid_to_efi_guid(
-            "00000000-0000-0000-0000-000000000000"
-        )
+        result = patcher.partuuid_to_efi_guid("00000000-0000-0000-0000-000000000000")
         assert result == bytes(16)
 
     def test_invalid_format(self):
@@ -80,9 +89,7 @@ class TestPatchVariable:
         size_sectors = 4302848
 
         with patch("patch_efi_vars.subprocess.run"):
-            patcher.patch_variable(
-                str(varfile), partuuid, start_sector, size_sectors
-            )
+            patcher.patch_variable(str(varfile), partuuid, start_sector, size_sectors)
 
         patched = bytearray(varfile.read_bytes())
         hd_offset = patcher.find_hd_node(patched)
