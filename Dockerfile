@@ -22,7 +22,9 @@ RUN chmod +x /usr/local/bin/esp-detect \
              /usr/local/bin/patch-efi-vars \
              /usr/local/bin/fwupd-container
 
+ARG VERSION=dev
 ENV FWUPD_UEFI_ESP_PATH=/boot/efi
+ENV FWUPD_CONTAINER_VERSION=${VERSION}
 
 ENTRYPOINT ["fwupd-container"]
 CMD ["help"]

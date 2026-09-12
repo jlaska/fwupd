@@ -6,6 +6,9 @@
 # JSON; progress and diagnostics go to stderr.
 set -euo pipefail
 
+VERSION="${FWUPD_CONTAINER_VERSION:-dev}"
+NODE_NAME="${NODE_NAME:-$(hostname 2>/dev/null || echo unknown)}"
+
 # ---------------------------------------------------------------------------
 # Logging (all to stderr so stdout stays clean for JSON)
 # ---------------------------------------------------------------------------
@@ -57,8 +60,8 @@ esp_info_json() {
 # ---------------------------------------------------------------------------
 refresh_lvfs() {
     log "Enabling LVFS remote and refreshing metadata..."
-    fwupdtool enable-remote lvfs 2>&1 >&2 || true
-    fwupdtool refresh 2>&1 >&2 || true
+    fwupdtool enable-remote lvfs >/dev/null 2>&1 || true
+    fwupdtool refresh >/dev/null 2>&1 || true
     ok "LVFS metadata refreshed"
 }
 
@@ -175,7 +178,7 @@ cmd_get_devices() {
     sys_fw_version=$(find_system_firmware_version "$devices_json")
 
     jq -n \
-        --arg hostname "$(hostname 2>/dev/null || echo unknown)" \
+        --arg hostname "$NODE_NAME" \
         --argjson esp "$(esp_info_json)" \
         --arg sys_fw_id "${sys_fw_id:-}" \
         --arg sys_fw_version "${sys_fw_version:-}" \
@@ -328,6 +331,16 @@ cmd_update() {
         }'
 }
 
+cmd_version() {
+    local fwupd_version
+    fwupd_version=$(fwupdtool --version 2>/dev/null | head -1 || echo "unknown")
+    jq -n \
+        --arg container_version "$VERSION" \
+        --arg fwupd_version "$fwupd_version" \
+        --arg node_name "$NODE_NAME" \
+        '{container_version: $container_version, fwupd_version: $fwupd_version, node_name: $node_name}'
+}
+
 cmd_help() {
     cat >&2 <<'EOF'
 fwupd-container — fwupd in a privileged Kubernetes pod
@@ -340,6 +353,7 @@ Subcommands:
   get-history              Show firmware update history (JSON)
   update [--device-id ID]  Stage firmware + apply container workarounds (JSON)
   esp-info                 Show EFI System Partition details (JSON)
+  version                  Show container and fwupd versions (JSON)
   help                     Show this help
 
 The container must run with:
@@ -348,7 +362,9 @@ The container must run with:
   - Host mounts: /sys/firmware, /sys/bus, /sys/class, /sys/devices, /dev, /run/udev
 
 Environment:
-  FWUPD_UEFI_ESP_PATH   ESP mount point (default: /boot/efi)
+  FWUPD_UEFI_ESP_PATH              ESP mount point (default: /boot/efi)
+  FWUPD_CONTAINER_VERSION          Container version (set at build time)
+  NODE_NAME                        Node name for output (default: hostname)
 
 All structured output goes to stdout as JSON.
 Progress and diagnostics go to stderr.
@@ -364,6 +380,7 @@ case "${1:-help}" in
     get-history)  cmd_get_history ;;
     update)       shift; cmd_update "$@" ;;
     esp-info)     cmd_esp_info ;;
+    version)      cmd_version ;;
     help|--help)  cmd_help ;;
     *)            die "Unknown subcommand: $1 (try 'help')" ;;
 esac

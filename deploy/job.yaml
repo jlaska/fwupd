@@ -25,6 +25,10 @@ spec:
           env:
             - name: FWUPD_UEFI_ESP_PATH
               value: /boot/efi
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
           securityContext:
             privileged: true
           volumeMounts:
